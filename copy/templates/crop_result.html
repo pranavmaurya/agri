@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Crop Prediction Result</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <style>
+    /* Add your custom styles here */
+    .crop-image {
+      width: 130px; 
+      height: 130px; 
+      object-fit: cover; 
+      border: 2px solid #ccc; /* Add border */
+      box-shadow: 3px 3px 5px #888; /* Add shadow */
+      margin-right: 10px; /* Add margin between images */
+    }
+
+    .centered-image {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 70%; 
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center; 
+      margin-top: 20px; 
+    }
+
+    /* Additional styles */
+    .crop-images-row {
+      display: flex;
+      flex-wrap: wrap; 
+      justify-content: center; 
+      margin-bottom: -10px; /* Negative margin to counteract default margin */
+    }
+
+    .crop-images-row .col-md-3 {
+      flex: 0 0 auto; 
+      margin-bottom: 20px; 
+    }
+
+    .soil-image {
+      max-width: 20%; 
+      height: 20%;
+      margin-top: 20px; 
+      border: 2px solid #ccc; 
+      box-shadow: 3px 3px 5px #888;
+    }
+
+    .bold-text {
+      font-weight: bold; 
+    }
+
+    /* Half page layout */
+    .half-page {
+      width: 50%;
+      float: left;
+      padding: 10px;
+    }
+
+    .clear-float {
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Prediction Result</h2>
+    <div class="half-page">
+      <p><span class="bold-text">{{ prediction_text }}</span></p>
+      <div class="crop-images-row">
+        <div class="col-md-3 mb-3">
+          <img src="{{ crop_images[0] }}" class="img-fluid crop-image" alt="Crop Image">
+        </div>
+        {% for image_path in crop_images[1:5] %}
+        <div class="col-md-3 mb-3">
+          <img src="{{ image_path }}" class="img-fluid crop-image" alt="Crop Image">
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="half-page">
+      <div>
+        {% if prediction ==0 %}
+                <p class="text-center"><b>Image is a Black Soil</b></p>
+            {% elif prediction ==1 %}
+                <p class="text-center"><b>Image is a Cinder Soil</b></p>
+            {% elif prediction ==2 %}
+                <p class="text-center"><b>Image is a Laterite Soil</b></p>
+            {% elif prediction ==3 %}
+                <p class="text-center"><b>Image is a Peat Soil</b></p>
+            {% elif prediction ==4 %}
+                <p class="text-center"><b>Image is a Yellow Soil</b></p>
+            {% endif %}
+      </div>
+      <div>
+        <img src="{{ image_path }}" class="img-fluid centered-image soil-image" alt="Uploaded Image">
+      </div>
+      <!-- <div class="button-container">
+        <a href="market.html" class="btn btn-primary">Align According to Market</a>
+      </div> -->
+      <form method="post" action="/align-to-market">
+        <select name="district" class="form-control">
+          <option value="Ahmednagar">Ahmednagar</option>
+          <option value="Akola">Akola</option>
+          <option value="Amravati">Amravati</option>
+          <option value="Aurangabad">Aurangabad</option>
+          <option value="Beed">Beed</option>
+          <option value="Bhandara">Bhandara</option>
+          <option value="Buldhana">Buldhana</option>
+          <option value="Chandrapur">Chandrapur</option>
+          <option value="Dhule">Dhule</option>
+          <option value="Gadchiroli">Gadchiroli</option>
+          <option value="Gondia">Gondia</option>
+          <option value="Hingoli">Hingoli</option>
+          <option value="Jalgaon">Jalgaon</option>
+          <option value="Jalna">Jalna</option>
+          <option value="Kolhapur">Kolhapur</option>
+          <option value="Latur">Latur</option>
+          <option value="Mumbai City">Mumbai City</option>
+          <option value="Mumbai Suburban">Mumbai Suburban</option>
+          <option value="Nagpur">Nagpur</option>
+          <option value="Nanded">Nanded</option>
+          <option value="Nandurbar">Nandurbar</option>
+          <option value="Nashik">Nashik</option>
+          <option value="Osmanabad">Osmanabad</option>
+          <option value="Palghar">Palghar</option>
+          <option value="Parbhani">Parbhani</option>
+          <option value="Pune">Pune</option>
+          <option value="Raigad">Raigad</option>
+          <option value="Ratnagiri">Ratnagiri</option>
+          <option value="Sangli">Sangli</option>
+          <option value="Satara">Satara</option>
+          <option value="Sindhudurg">Sindhudurg</option>
+          <option value="Solapur">Solapur</option>
+          <option value="Thane">Thane</option>
+          <option value="Wardha">Wardha</option>
+          <option value="Washim">Washim</option>
+          <option value="Yavatmal">Yavatmal</option>          
+
+          </select>
+          <button type="submit" class="btn btn-primary mt-2">Align to Market</button>
+        </form>
+
+    <div class="clear-float"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
