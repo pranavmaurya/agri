@@ -1,4 +1,4 @@
-## Enhancing Agri-Sustainability: Multimodal Recommendations for Demand – Supply Alignment
+# Enhancing Agri-Sustainability: Multimodal Recommendations for Demand – Supply Alignment
 
 # Overview
 This project aims to enhance agricultural sustainability by providing multimodal recommendations for crop selection based on soil characteristics, market demand, and supply alignment. By integrating predictive analytics, machine learning, and market analysis, the system assists farmers in making informed decisions for crop selection, thereby improving productivity and sustainability in the agricultural sector.
@@ -31,10 +31,11 @@ Clone the repository.
 
 # Results
 ![1st](https://github.com/pranavmaurya/agri/assets/85123163/4f40d2b2-1d53-48bc-a836-7d9b34396393)
+
 ![flast](https://github.com/pranavmaurya/agri/assets/85123163/cb870f8a-5b7e-48e8-9456-14f01c5d8628)
+
 ![last](https://github.com/pranavmaurya/agri/assets/85123163/fd51f5de-09bd-4868-9bb3-c7ccf279b853)
 
 # Contributors
 - [Hardik Nikam]([https://github.com/contributor1](https://github.com/HardikNickam))
-- [Dream Patel]
-
+- [Dream Patel]()
