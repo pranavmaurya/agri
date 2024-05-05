@@ -37,5 +37,5 @@ Clone the repository.
 ![last](https://github.com/pranavmaurya/agri/assets/85123163/fd51f5de-09bd-4868-9bb3-c7ccf279b853)
 
 # Contributors
-- [Hardik Nikam]([https://github.com/contributor1](https://github.com/HardikNickam))
+- [Hardik Nikam](https://github.com/contributor1](https://github.com/HardikNickam)
 - [Dream Patel]()
