@@ -9,16 +9,16 @@ Market Analysis: Incorporates market dynamics to align crop selection with marke
 Enhanced Decision-making: Provides farmers with a tool for informed decision-making in crop selection, enhancing productivity and sustainability.
 
 # Technologies Used
-Python: Backend development, machine learning models, and data processing.
-Flask: Web framework for building the application.
-SQLite: Database for storing crop prices, user data, and prediction results.
-TensorFlow/Keras: Machine learning libraries for training and deploying models.
-Chart.js: JavaScript library for visualizing market data.
-Machine Learning: Random Forest and Neural Network models for crop prediction.
-Web Technologies: HTML, CSS, JavaScript for the frontend interface.
+- Python: Backend development, machine learning models, and data processing.
+- Flask: Web framework for building the application.
+- SQLite: Database for storing crop prices, user data, and prediction results.
+- TensorFlow/Keras: Machine learning libraries for training and deploying models.
+- Chart.js: JavaScript library for visualizing market data.
+- Machine Learning: Random Forest and Neural Network models for crop prediction.
+- Web Technologies: HTML, CSS, JavaScript for the frontend interface.
 
 # Setup
-Clone the repository.
+- Clone the repository.
 - Install the required dependencies using pip install -r requirements.txt.
 - Run the Flask application using python app.py.
 - Access the application in your web browser at http://localhost:5000.
